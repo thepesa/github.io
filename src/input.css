@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff9900;
+  text-shadow: 0 0 10px rgba(255, 153, 0, 0.8);
+  transition: color 0.3s ease-in-out;
+}
+
+
+.bg-gray-100 {
+  z-index: 10;
+}
+
+#nav-bar {
+  transition: background-color 0.3s ease;
+}
+
+#nav-bar.scrolled {
+  background-color: black;
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-text-fade {
+  animation: textFade 1s ease-in-out;
+  display: inline-block;
+}
+
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: rgba(255, 153, 0, 0.8);
+  transition: width 0.2s ease-in-out;
+}
+
+.link:hover::after {
+  width: 100%;
+}
